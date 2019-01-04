@@ -6,7 +6,9 @@ A dynamic multi-page form implementation in Flutter
 
 Video tutorial about this project is available on Youtube
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/H2pVgDjDrxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=H2pVgDjDrxQ
+" target="_blank"><img src="http://img.youtube.com/vi/H2pVgDjDrxQ/maxresdefault.jpg" 
+alt="Flutter Dynamic Multi Form Tutorial"  border="10" /></a>
 
 ## Getting Started
 
