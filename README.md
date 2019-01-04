@@ -2,14 +2,6 @@
 
 A dynamic multi-page form implementation in Flutter
 
-## Tutorial on Youtube
-
-Video tutorial about this project is available on Youtube
-
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=H2pVgDjDrxQ
-" target="_blank"><img src="http://img.youtube.com/vi/H2pVgDjDrxQ/maxresdefault.jpg" 
-alt="Flutter Dynamic Multi Form Tutorial"  border="10" /></a>
-
 ## Getting Started
 
 Clone this repository
@@ -17,6 +9,14 @@ Clone this repository
 ```
 git clone git@github.com:putraxor/flutter_multipage_form.git
 ```
+
+## Tutorial on Youtube
+
+Video tutorial about this project is available on Youtube
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=H2pVgDjDrxQ
+" target="_blank"><img src="http://img.youtube.com/vi/H2pVgDjDrxQ/maxresdefault.jpg" 
+alt="Flutter Dynamic Multi Form Tutorial"  border="10" /></a>
 
 ## Screenshot
 
