@@ -2,9 +2,11 @@
 
 A dynamic multi-page form implementation in Flutter
 
-## Tutorial
+## Tutorial on Youtube
 
 Video tutorial about this project is available on Youtube
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/H2pVgDjDrxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Getting Started
 
@@ -18,7 +20,7 @@ git clone git@github.com:putraxor/flutter_multipage_form.git
 
 <table style="{border:none}">
 <tr><td>
-<img src="https://raw.githubusercontent.com/putraxor/flutter_multipage_form/master/art/empty.png" alt="Empty State" width="250"/>
+<img src="https://raw.githubusercontent.com/putraxor/flutter_multipage_form/master/art/empty.png" alt="Empty State" width="240"/>
 </td><td>
-<img src="https://raw.githubusercontent.com/putraxor/flutter_multipage_form/master/art/forms.png" alt="Multi Forms" width="250" />
+<img src="https://raw.githubusercontent.com/putraxor/flutter_multipage_form/master/art/forms.png" alt="Multi Forms" width="240" />
 </td></tr></table>

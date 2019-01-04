@@ -67,7 +67,7 @@ class _UserFormState extends State<UserForm> {
                   validator: (val) =>
                       val.contains('@') ? null : 'Email is invalid',
                   decoration: InputDecoration(
-                    labelText: 'Email',
+                    labelText: 'Email Address',
                     hintText: 'Enter your email',
                     icon: Icon(Icons.email),
                     isDense: true,
