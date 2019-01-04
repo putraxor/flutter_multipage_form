@@ -16,7 +16,7 @@ git clone git@github.com:putraxor/flutter_multipage_form.git
 
 ## Screenshot
 
-<table style={border:"none"}>
+<table style="{border:none}">
 <tr><td>
 <img src="https://raw.githubusercontent.com/putraxor/flutter_multipage_form/master/art/empty.png" alt="Empty State" width="250"/>
 </td><td>
