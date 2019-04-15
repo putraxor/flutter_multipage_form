@@ -7,16 +7,15 @@ class UserForm extends StatefulWidget {
   final User user;
   final state = _UserFormState();
   final OnDelete onDelete;
-
-  UserForm({Key key, this.user, this.onDelete}) : super(key: key);
+  final GlobalKey<FormState> form;
+  UserForm({Key key, this.user, this.onDelete, this.form}) : super(key: key);
   @override
   _UserFormState createState() => state;
 
-  bool isValid() => state.validate();
+  //bool isValid() => state.validate();
 }
 
 class _UserFormState extends State<UserForm> {
-  final form = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class _UserFormState extends State<UserForm> {
         clipBehavior: Clip.antiAlias,
         borderRadius: BorderRadius.circular(8),
         child: Form(
-          key: form,
+          key: widget.form,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -81,10 +80,4 @@ class _UserFormState extends State<UserForm> {
     );
   }
 
-  ///form validator
-  bool validate() {
-    var valid = form.currentState.validate();
-    if (valid) form.currentState.save();
-    return valid;
-  }
 }

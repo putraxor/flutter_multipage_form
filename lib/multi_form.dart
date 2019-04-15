@@ -9,7 +9,8 @@ class MultiForm extends StatefulWidget {
 }
 
 class _MultiFormState extends State<MultiForm> {
-  List<UserForm> users = [];
+  List<User> users = [];
+  List<GlobalKey<FormState>> _forms = [];
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,13 @@ class _MultiFormState extends State<MultiForm> {
             : ListView.builder(
                 addAutomaticKeepAlives: true,
                 itemCount: users.length,
-                itemBuilder: (_, i) => users[i],
+                itemBuilder: (_, i) => UserForm(
+                      form: _forms[i],
+                      onDelete: () {
+                        onDelete(i);
+                      },
+                      user: users[i],
+                    ),
               ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -61,56 +68,59 @@ class _MultiFormState extends State<MultiForm> {
   }
 
   ///on form user deleted
-  void onDelete(User _user) {
+  void onDelete(index) {
     setState(() {
-      var find = users.firstWhere(
-        (it) => it.user == _user,
-        orElse: () => null,
-      );
-      if (find != null) users.removeAt(users.indexOf(find));
+      users.removeAt(index);
+      _forms.removeAt(index);
     });
   }
 
   ///on add form
   void onAddForm() {
     setState(() {
+      var _form = GlobalKey<FormState>();
       var _user = User();
-      users.add(UserForm(
-        user: _user,
-        onDelete: () => onDelete(_user),
-      ));
+      users.add(_user);
+      _forms.add(_form);
     });
+  }
+
+  ///form validator
+  bool validate(int index) {
+    var valid = _forms[index].currentState.validate();
+    if (valid) _forms[index].currentState.save();
+    return valid;
   }
 
   ///on save forms
   void onSave() {
     if (users.length > 0) {
-      var allValid = true;
-      users.forEach((form) => allValid = allValid && form.isValid());
-      if (allValid) {
-        var data = users.map((it) => it.user).toList();
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            fullscreenDialog: true,
-            builder: (_) => Scaffold(
-                  appBar: AppBar(
-                    title: Text('List of Users'),
-                  ),
-                  body: ListView.builder(
-                    itemCount: data.length,
-                    itemBuilder: (_, i) => ListTile(
-                          leading: CircleAvatar(
-                            child: Text(data[i].fullName.substring(0, 1)),
-                          ),
-                          title: Text(data[i].fullName),
-                          subtitle: Text(data[i].email),
-                        ),
-                  ),
-                ),
-          ),
-        );
+      for (int i = 0; i < _forms.length; i++) {
+        if (!validate(i)) {
+          return;
+        }
       }
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          fullscreenDialog: true,
+          builder: (_) => Scaffold(
+                appBar: AppBar(
+                  title: Text('List of Users'),
+                ),
+                body: ListView.builder(
+                  itemCount: users.length,
+                  itemBuilder: (_, i) => ListTile(
+                        leading: CircleAvatar(
+                          child: Text(users[i].fullName.substring(0, 1)),
+                        ),
+                        title: Text(users[i].fullName),
+                        subtitle: Text(users[i].email),
+                      ),
+                ),
+              ),
+        ),
+      );
     }
   }
 }
