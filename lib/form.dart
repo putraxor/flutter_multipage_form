@@ -11,8 +11,6 @@ class UserForm extends StatefulWidget {
   UserForm({Key key, this.user, this.onDelete, this.form}) : super(key: key);
   @override
   _UserFormState createState() => state;
-
-  //bool isValid() => state.validate();
 }
 
 class _UserFormState extends State<UserForm> {
@@ -79,5 +77,4 @@ class _UserFormState extends State<UserForm> {
       ),
     );
   }
-
 }
